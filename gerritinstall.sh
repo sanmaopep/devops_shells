@@ -7,7 +7,7 @@ ADMIN_USERNAME="admin"
 PORT=30
 
 # check 8080
-./util/checkport.sh 8080 && exit;
+./util/checkport.sh 8080 && echo "8080端口占用";exit;
 # install git first
 git || yum install -y git
 read -p "Choose a path you want to install(/opt/gerrit):" INSTALL_PATH
@@ -15,28 +15,11 @@ read -p "Choose a path you want to install(/opt/gerrit):" INSTALL_PATH
 cd $INSTALL_PATH
 wget https://gerrit-releases.storage.googleapis.com/gerrit-full-2.5.2.war
 # TODO how to answer automatic
+enter=$'\n'
 java -jar gerrit-full-2.5.2.war init -d gerrit_site << EOF
-
-
+$enter$enter
 http
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter$enter
 EOF
 
 # 安装Nginx
@@ -82,7 +65,7 @@ htpasswd -c /etc/nginx/gerrit.password $ADMIN_USERNAME
 
 # 注意关闭apache服务
 service httpd stop
-./util/checkport.sh 80 && exit;
+./util/checkport.sh 80 && echo "80端口占用";exit;
 service nginx start
 
 echo "Install Finished"
