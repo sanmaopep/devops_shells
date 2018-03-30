@@ -14,7 +14,7 @@ read -p "Choose a path you want to install(/opt/gerrit):" INSTALL_PATH
 
 cd $INSTALL_PATH
 wget https://gerrit-releases.storage.googleapis.com/gerrit-full-2.5.2.war
-# TODO how to answer automatic
+# how to answer automatic
 enter=$'\n'
 java -jar gerrit-full-2.5.2.war init -d gerrit_site << EOF
 $enter$enter

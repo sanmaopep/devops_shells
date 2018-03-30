@@ -1,6 +1,11 @@
 # devops_shells
 devops相关软件无docker安装，bash练手
 
-
-## 环境说明
+## 开发目标
++ gerrit
++ openldap
++ gitlab
++ redmine
++ nexus
++ jenkins
 
